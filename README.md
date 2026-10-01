@@ -16,7 +16,8 @@ python3 -m http.server 4174 --bind 127.0.0.1
 ```
 
 The page shows the paper’s Figure 2 beside a short TL;DR, both benchmark plot
-groups, recorded demos, and an always-visible citation.
+groups, an open booking replay, and an always-visible citation. The coding video
+comes before the TL;DR. Copy icons briefly confirm success before fading back.
 
 The homepage is `index.html`; its styles, scripts and paper figures are in
 `website/assets/`. The main coding video is in `demo/coding/`. The booking
