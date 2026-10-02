@@ -92,7 +92,7 @@ strong,b { font-weight:650; }
 
 .abstract-section { display:grid; grid-template-columns:1fr; align-items:center; gap:48px; padding-block:64px; border-top:1px solid var(--line); }
 .tldr { font-size:16px; line-height:1.65; }
-.abstract-section .overview-figure { max-width:900px; margin-inline:auto; }
+.abstract-section .overview-figure { width:100%; max-width:900px; margin-inline:auto; }
 .overview-figure img { width:100%; height:auto; display:block; }
 .overview-figure figcaption { color:var(--muted); font-size:12px; margin-top:18px; }
 .tldr p+p { margin-top:12px; }
@@ -261,3 +261,5 @@ html { scroll-behavior:auto; }
 @media(max-width:900px) { .benchmark-setup { grid-template-columns:1fr; gap:20px; } }
 
 @media(max-width:600px) { .benchmark-setup .sequential { gap:25px; } }
+
+.overview-figure .communication-animation { height:680px; background:transparent; }

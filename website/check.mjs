@@ -16,7 +16,7 @@ const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
 assert.equal(new Set(ids).size, ids.length, 'Duplicate HTML IDs');
 assert.equal((html.match(/<h1\b/g) || []).length, 1, 'One page heading');
 assert.match(html, /<h1 id="hero-title">Receiver-Conditioned Latent Communication gives/);
-assert.equal((html.match(/<figcaption>/g) || []).length, 5, 'Explain each paper figure');
+assert.equal((html.match(/<figcaption>/g) || []).length, 4, 'Explain each static paper figure');
 assert.match(html, /<html lang="en">/);
 assert.match(html, /name="viewport"/);
 assert.match(html, /<title>Receiver-Conditioned Latent Communication gives 94% CacheBack<\/title>/);
@@ -24,7 +24,7 @@ const sectionOrder = ['result-summary', 'booking-demo', 'abstract', 'results', '
 sectionOrder.slice(1).forEach((id, i) => {
   assert.ok(html.indexOf(`id="${sectionOrder[i]}"`) < html.indexOf(`id="${id}"`), `Section order: ${id}`);
 });
-assert.equal((html.match(/<img src="website\/assets\/figures\//g) || []).length, 5);
+assert.equal((html.match(/<img src="website\/assets\/figures\//g) || []).length, 4);
 
 for (const [, url] of html.matchAll(/(?:href|src|poster)="([^"]+)"/g)) {
   if (/^(https:|data:)/.test(url)) continue;
@@ -104,3 +104,10 @@ for (const name of readdirSync(dist, { recursive: true })) {
 }
 assert.ok(bytes < 100000, 'Keep first-party static assets below 100 KB');
 console.log(`Website checks passed: anchors, assets, benchmark points, accessibility hooks; ${bytes} bytes, ${gzipSync(js).length} bytes gzipped JS.`);
+
+const animation = readFileSync(resolve(project, 'demo/communication.html'), 'utf8');
+assert.match(html, /src="demo\/communication.html"/);
+assert.equal((animation.match(/<svg id="svg"/g) || []).length, 1);
+assert.equal((animation.match(/<button/g) || []).length, 1, 'Only the play/pause control');
+assert.doesNotMatch(animation, /setTimeout\(play/, 'Playback starts on user action');
+new Function(animation.match(/<script>([\s\S]*?)<\/script>/)[1]);
