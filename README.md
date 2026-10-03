@@ -32,6 +32,6 @@ image used for link previews; the coding video keeps its own poster and preloads
 
 Figure 2 is a scalable SVG redrawn from the paper asset, with the four legend entries below the diagram.
 
-Figure 2 now embeds the supplied animation in `demo/communication.html`, with a single play/pause button on the figure. The frame sizes to its contents. It uses only local assets and works with the same static deployment on GitHub Pages or Hugging Face Spaces.
+Figure 2 now embeds the supplied animation in `demo/communication.html`, with a single play/pause button on the figure. The section expands to fit the entire animation and caption, without an inner scrollbar. Frame height follows the stage’s layout height, including caption changes during playback. It uses only local assets and works with the same static deployment on GitHub Pages or Hugging Face Spaces.
 
 Benchmark plot labels use compression factors (4×, 16×); legends distinguish these from fixed position budgets and text sender sizes.

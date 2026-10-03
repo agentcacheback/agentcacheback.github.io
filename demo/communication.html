@@ -304,8 +304,11 @@ button.onclick = () => {
 };
 render(t);
 new ResizeObserver(() => {
-  if (window.frameElement) window.frameElement.style.height = Math.ceil(document.body.getBoundingClientRect().height + 2) + 'px';
-}).observe(document.body);
+  if (window.frameElement) {
+    window.frameElement.style.aspectRatio = 'auto';
+    window.frameElement.style.height = document.getElementById('stage').offsetHeight + 4 + 'px';
+  }
+}).observe(document.getElementById('stage'));
 </script>
 
 

@@ -277,5 +277,5 @@ html { scroll-behavior:auto; }
 
 
 
-.overview-figure .communication-animation { height:680px; background:transparent; }
+.overview-figure .communication-animation { height:auto; aspect-ratio:1180 / 650; background:transparent; }
 .demo-section + .abstract-section { border-top:0; }

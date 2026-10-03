@@ -106,7 +106,7 @@ assert.ok(bytes < 100000, 'Keep first-party static assets below 100 KB');
 console.log(`Website checks passed: anchors, assets, benchmark points, accessibility hooks; ${bytes} bytes, ${gzipSync(js).length} bytes gzipped JS.`);
 
 const animation = readFileSync(resolve(project, 'demo/communication.html'), 'utf8');
-assert.match(html, /src="demo\/communication.html"/);
+assert.match(html, /src="demo\/communication.html\?v=fit-2"/);
 assert.equal((animation.match(/<svg id="svg"/g) || []).length, 1);
 assert.equal((animation.match(/<button/g) || []).length, 1, 'Only the play/pause control');
 assert.doesNotMatch(animation, /setTimeout\(play/, 'Playback starts on user action');
