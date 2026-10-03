@@ -20,7 +20,7 @@ assert.equal((html.match(/<figcaption>/g) || []).length, 4, 'Explain each static
 assert.match(html, /<html lang="en">/);
 assert.match(html, /name="viewport"/);
 assert.match(html, /<title>Receiver-Conditioned Latent Communication gives 94% CacheBack<\/title>/);
-const sectionOrder = ['result-summary', 'booking-demo', 'abstract', 'results', 'demo', 'code', 'paper'];
+const sectionOrder = ['result-summary', 'abstract', 'demo', 'results', 'booking-demo', 'code', 'paper'];
 sectionOrder.slice(1).forEach((id, i) => {
   assert.ok(html.indexOf(`id="${sectionOrder[i]}"`) < html.indexOf(`id="${id}"`), `Section order: ${id}`);
 });
@@ -68,23 +68,25 @@ assert.match(html, /loading="lazy" sandbox="allow-scripts allow-same-origin"/);
 assert.match(css, /prefers-reduced-motion:reduce/);
 assert.match(css, /:focus-visible/);
 assert.match(html, /id="bibtex"/);
-assert.match(html, /<iframe[^>]+src="demo\/index\.html\?v=fit-7"/);
-assert.match(readFileSync(resolve(project, 'demo/index.html'), 'utf8'), /fetch\("trace-w4\.json"\)/);
+assert.match(html, /<iframe[^>]+src="demo\/index\.html\?v=selection-1"/);
+const replayScript = readFileSync(resolve(project, 'demo/replay.js'), 'utf8');
+assert.match(replayScript, /fetch\('trace-w4\.json'\)/);
 // The booking record is rendered by the embedded replay, not duplicated in the page.
 const replay = readFileSync(resolve(project, 'demo/index.html'), 'utf8');
-assert.match(replay, /trace-w4\.json/);
-assert.match(html, /aria-labelledby="booking-question"/);
+assert.match(replay, /src="replay.js\?v=selection-1"/);
+new Function(replayScript);
+assert.match(html, /aria-labelledby="booking-title"/);
 assert.doesNotMatch(html, /Recorded model run|demo-outcomes|hero-description|class="contribution"/);
 for (const label of ['Copy code', 'Copy citation']) assert.ok(html.includes(`aria-label="${label}"`));
 
 const coding = JSON.parse(readFileSync(resolve(project, 'demo/coding/evidence.json'), 'utf8')).arms;
-assert.ok(html.indexOf('id="booking-demo"') < html.indexOf('id="coding-demo"'), 'Booking replay precedes coding video');
+assert.ok(html.indexOf('id="coding-demo"') < html.indexOf('id="booking-demo"'), 'Coding video precedes document replay');
 const video = html.match(/<video\b[^>]*>[\s\S]*?<\/video>/)[0];
 assert.match(video, /controls playsinline preload="auto"/);
 assert.doesNotMatch(video, /autoplay/);
-assert.match(video, /src="demo\/coding\/rclc-cacheback-4k.mp4"/);
-assert.match(video, /poster="demo\/coding\/poster.jpg"/);
-assert.equal(readFileSync(resolve(project, 'demo/coding/rclc-cacheback-4k.mp4')).toString('ascii', 4, 8), 'ftyp', 'Real MP4, not a Git LFS pointer');
+assert.match(video, /src="demo\/coding\/cacheback-coding-4k.mp4"/);
+assert.match(video, /poster="demo\/coding\/cacheback-coding-poster.jpg"/);
+assert.equal(readFileSync(resolve(project, 'demo/coding/cacheback-coding-4k.mp4')).toString('ascii', 4, 8), 'ftyp', 'Real MP4, not a Git LFS pointer');
 assert.ok(html.includes(`${(coding.text.seconds / coding.latent.seconds).toFixed(2)}× faster`));
 assert.ok(html.includes(`CacheBack ${coding.latent.seconds.toFixed(2)} s; text ${coding.text.seconds.toFixed(2)} s`));
 assert.equal(coding.latent.patch, coding.text.patch);
@@ -106,8 +108,13 @@ assert.ok(bytes < 100000, 'Keep first-party static assets below 100 KB');
 console.log(`Website checks passed: anchors, assets, benchmark points, accessibility hooks; ${bytes} bytes, ${gzipSync(js).length} bytes gzipped JS.`);
 
 const animation = readFileSync(resolve(project, 'demo/communication.html'), 'utf8');
-assert.match(html, /src="demo\/communication.html\?v=fit-2"/);
-assert.equal((animation.match(/<svg id="svg"/g) || []).length, 1);
-assert.equal((animation.match(/<button/g) || []).length, 1, 'Only the play/pause control');
-assert.doesNotMatch(animation, /setTimeout\(play/, 'Playback starts on user action');
-new Function(animation.match(/<script>([\s\S]*?)<\/script>/)[1]);
+const animationScript = readFileSync(resolve(project, 'demo/communication.js'), 'utf8');
+assert.doesNotMatch(html, /<iframe[^>]*communication/, 'Method animation participates in page layout');
+for (const markup of [html, animation]) {
+  assert.equal((markup.match(/<svg id="communication-svg"/g) || []).length, 1);
+  assert.equal((markup.match(/id="animation-play"/g) || []).length, 1, 'One animation control');
+  assert.match(markup, /src="(?:demo\/)?communication.js\?v=inline-1"/);
+}
+assert.doesNotMatch(animationScript, /frameElement|ResizeObserver/, 'No iframe height synchronisation');
+assert.doesNotMatch(animationScript, /setTimeout\(play/, 'Playback starts on user action');
+new Function(animationScript);
