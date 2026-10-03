@@ -20,7 +20,7 @@ assert.equal((html.match(/<figcaption>/g) || []).length, 4, 'Explain each static
 assert.match(html, /<html lang="en">/);
 assert.match(html, /name="viewport"/);
 assert.match(html, /<title>Receiver-Conditioned Latent Communication gives 94% CacheBack<\/title>/);
-const sectionOrder = ['result-summary', 'booking-demo', 'abstract', 'results', 'demo', 'code', 'paper'];
+const sectionOrder = ['result-summary', 'demo', 'abstract', 'results', 'booking-demo', 'code', 'paper'];
 sectionOrder.slice(1).forEach((id, i) => {
   assert.ok(html.indexOf(`id="${sectionOrder[i]}"`) < html.indexOf(`id="${id}"`), `Section order: ${id}`);
 });
@@ -68,7 +68,7 @@ assert.match(html, /loading="lazy" sandbox="allow-scripts allow-same-origin"/);
 assert.match(css, /prefers-reduced-motion:reduce/);
 assert.match(css, /:focus-visible/);
 assert.match(html, /id="bibtex"/);
-assert.match(html, /<iframe[^>]+src="demo\/index\.html\?v=fit-7"/);
+assert.match(html, /<iframe[^>]+src="demo\/index\.html\?v=fit-9"/);
 assert.match(readFileSync(resolve(project, 'demo/index.html'), 'utf8'), /fetch\("trace-w4\.json"\)/);
 // The booking record is rendered by the embedded replay, not duplicated in the page.
 const replay = readFileSync(resolve(project, 'demo/index.html'), 'utf8');
@@ -78,7 +78,7 @@ assert.doesNotMatch(html, /Recorded model run|demo-outcomes|hero-description|cla
 for (const label of ['Copy code', 'Copy citation']) assert.ok(html.includes(`aria-label="${label}"`));
 
 const coding = JSON.parse(readFileSync(resolve(project, 'demo/coding/evidence.json'), 'utf8')).arms;
-assert.ok(html.indexOf('id="booking-demo"') < html.indexOf('id="coding-demo"'), 'Booking replay precedes coding video');
+assert.ok(html.indexOf('id="coding-demo"') < html.indexOf('id="booking-demo"'), 'Coding video precedes booking replay');
 const video = html.match(/<video\b[^>]*>[\s\S]*?<\/video>/)[0];
 assert.match(video, /controls playsinline preload="auto"/);
 assert.doesNotMatch(video, /autoplay/);
