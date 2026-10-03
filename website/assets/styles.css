@@ -262,4 +262,4 @@ html { scroll-behavior:auto; }
 
 @media(max-width:600px) { .benchmark-setup .sequential { gap:25px; } }
 
-.overview-figure .communication-animation { height:680px; background:transparent; }
+.overview-figure .communication-animation { height:auto; aspect-ratio:1180 / 650; background:transparent; }
