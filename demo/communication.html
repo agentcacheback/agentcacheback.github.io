@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CacheBack vs. full-KV transfer animation</title>
+  <style>body { margin:0; }</style>
+  <link rel="stylesheet" href="communication.css?v=inline-1">
+  <script type="module" src="communication.js?v=inline-1"></script>
+</head>
+<body>
+<div class="communication-animation">
+  <button id="animation-play" aria-label="Play animation" title="Play animation">▶</button>
+  <svg id="communication-svg" viewBox="0 0 1180 548" role="img" aria-label="Animated comparison of full KV transfer and CacheBack"></svg>
+  <div id="animation-caption">Selected source positions can be sent as <span style="color:#6a4fb8"><b>token IDs</b></span>; latent steps must be sent as <span style="color:#3f669f"><b>continuous vectors</b></span>. The receiver prefills both to build its own state.</div>
+</div>
+</body>
+</html>

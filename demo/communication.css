@@ -1,0 +1,7 @@
+.communication-animation { position:relative; font-family:-apple-system,"Helvetica Neue",Arial,sans-serif; color:#444; }
+.communication-animation svg { display:block; width:100%; height:auto; }
+#animation-caption { min-height:2.7em; padding:8px 0; font-size:16px; line-height:1.4; }
+#animation-play { position:absolute; top:8px; right:8px; border:0; border-radius:50%; width:40px; height:40px; background:#0b7872; color:white; cursor:pointer; font-size:18px; }
+#animation-play:hover { background:#202827; }
+#animation-play:focus-visible { outline:2px solid #0b7872; outline-offset:3px; }
+@media(max-width:600px) { #animation-caption { font-size:14px; min-height:4.2em; } #animation-play { width:32px; height:32px; top:0; right:0; font-size:14px; } }

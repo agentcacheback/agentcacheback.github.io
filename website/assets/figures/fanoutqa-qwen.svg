@@ -185,37 +185,37 @@
 <path d="M 97.070255 212.08193  Q 96.276821 211.733308 95.483388 211.384687  " style="fill: none; opacity: 0.6; stroke: #0f766e; stroke-width: 0.55; stroke-linecap: round" />
 </g>
 <g id="text_13">
-<text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: start; fill: #0f766e" x="100.903456" y="222.22976">r128</text>
+<text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: start; fill: #0f766e" x="100.903456" y="222.22976">128×</text>
 </g>
 <g id="patch_6">
 <path d="M 83.782923 189.257143  Q 85.285314 189.257143 86.787705 189.257143  " style="fill: none; opacity: 0.6; stroke: #0f766e; stroke-width: 0.55; stroke-linecap: round" />
 </g>
 <g id="text_14">
-<text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: end; fill: #0f766e" x="79.785254" y="192.114565">r64</text>
+<text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: end; fill: #0f766e" x="79.785254" y="192.114565">64×</text>
 </g>
 <g id="patch_7">
 <path d="M 85.800992 151.558171  Q 88.58659 150.360568 91.372188 149.162964  " style="fill: none; opacity: 0.6; stroke: #0f766e; stroke-width: 0.55; stroke-linecap: round" />
 </g>
 <g id="text_15">
-<text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: end; fill: #0f766e" x="81.965632" y="160.045541">r32</text>
+<text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: end; fill: #0f766e" x="81.965632" y="160.045541">32×</text>
 </g>
 <g id="patch_8">
 <path d="M 89.161532 141.427776  Q 91.897034 142.486236 94.632536 143.544695  " style="fill: none; opacity: 0.6; stroke: #0f766e; stroke-width: 0.55; stroke-linecap: round" />
 </g>
 <g id="text_16">
-<text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: end; fill: #0f766e" x="85.29687" y="139.206908">r16</text>
+<text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: end; fill: #0f766e" x="85.29687" y="139.206908">16×</text>
 </g>
 <g id="patch_9">
 <path d="M 115.303887 134.372571  Q 113.800899 134.372571 112.297911 134.372571  " style="fill: none; opacity: 0.6; stroke: #0f766e; stroke-width: 0.55; stroke-linecap: round" />
 </g>
 <g id="text_17">
-<text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: start; fill: #0f766e" x="119.298374" y="137.229993">r8</text>
+<text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: start; fill: #0f766e" x="119.298374" y="137.229993">8×</text>
 </g>
 <g id="patch_10">
 <path d="M 119.121005 118.245659  Q 119.121005 118.995746 119.121005 119.745833  " style="fill: none; opacity: 0.6; stroke: #0f766e; stroke-width: 0.55; stroke-linecap: round" />
 </g>
 <g id="text_18">
-<text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: middle; fill: #0f766e" x="119.121005" y="111.603255">r4</text>
+<text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: middle; fill: #0f766e" x="119.121005" y="111.603255">4×</text>
 </g>
 <g id="text_19">
 <text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: middle; fill: #995319" x="256.289645" y="147.976224">8B text</text>

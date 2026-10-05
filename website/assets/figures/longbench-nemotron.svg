@@ -214,19 +214,19 @@
 <path d="M 137.814372 173.116957  Q 139.666514 172.21928 141.518656 171.321603  " style="fill: none; opacity: 0.6; stroke: #0f766e; stroke-width: 0.55; stroke-linecap: round" />
 </g>
 <g id="text_13">
-<text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: end; fill: #0f766e" x="134.015856" y="183.999369">r128</text>
+<text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: end; fill: #0f766e" x="134.015856" y="183.999369">128×</text>
 </g>
 <g id="patch_6">
 <path d="M 140.472463 141.896712  Q 142.24666 142.647792 144.020857 143.398871  " style="fill: none; opacity: 0.6; stroke: #0f766e; stroke-width: 0.55; stroke-linecap: round" />
 </g>
 <g id="text_14">
-<text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: end; fill: #0f766e" x="136.628592" y="139.206908">r16</text>
+<text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: end; fill: #0f766e" x="136.628592" y="139.206908">16×</text>
 </g>
 <g id="patch_7">
 <path d="M 171.580049 134.533667  Q 170.279191 135.606683 168.978334 136.679699  " style="fill: none; opacity: 0.6; stroke: #0f766e; stroke-width: 0.55; stroke-linecap: round" />
 </g>
 <g id="text_15">
-<text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: start; fill: #0f766e" x="175.121488" y="129.71845">r8</text>
+<text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: start; fill: #0f766e" x="175.121488" y="129.71845">8×</text>
 </g>
 <g id="text_16">
 <text style="font-size: 11px; font-family: Arial, sans-serif; text-anchor: middle; fill: #995319" x="325.47816" y="153.464681">12B text</text>
